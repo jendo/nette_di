@@ -1,0 +1,13 @@
+parameters:
+    logFile: %baseDir%/logs/log.txt
+
+services:
+    application: MyApp\App\App
+    - MyApp\Mailer\SendMailMailer
+    - MyApp\Logger\FileLogger(%logFile%)
+    - MyApp\Manager\NewsletterManager
+    - MyApp\Mailer\MailFactory()
+    - MyApp\User\UserFactory
+    requestFactory: Nette\Http\RequestFactory
+    - @requestFactory::createHttpRequest
+
