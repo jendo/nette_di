@@ -1,0 +1,7 @@
+/vendor
+/temp
+/logs
+
+# Intellij IDEA
+.idea
+*.iml
